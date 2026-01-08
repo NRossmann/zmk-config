@@ -29,8 +29,6 @@
             &kp LSHFT &kp Y &kp X &kp C &kp V &kp B     &mo 3     &mo 2              &mo 2     &mo 3        &kp N    &kp M  &kp COMMA &kp DOT &kp MINUS &kp RSHFT
                                   &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1        &mo 1 &kp RET &kp BSPC &kp DEL &kp RCTRL
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         symbol_layer {
@@ -45,8 +43,6 @@
             &trans    &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp AMPS &trans &trans   &trans &trans   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                                          &trans &trans &trans &trans &trans          &trans &trans   &trans &trans &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         navigation_layer {
@@ -61,8 +57,6 @@
             &trans    &kp LC(X)   &kp LC(C)    &kp LC(V)    &kp LC(Z)    &kp LC(LS(Z)) &trans &trans &trans &trans &kp LC(A)  &kp LC(S)   &kp LC(F)     &kp LC(D)      &trans &trans
                                                &trans       &trans       &trans        &trans &trans &trans &trans &trans     &trans      &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LEFT RIGHT>;
         };
 
         rgb_bt_layer {
@@ -77,8 +71,6 @@
             &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans        &trans &trans   &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans
                                                  &trans       &trans       &trans       &trans &trans        &trans &trans   &trans          &trans          &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RGB_BRI RGB_BRD>;
         };
     };
 };
