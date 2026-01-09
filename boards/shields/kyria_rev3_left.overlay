@@ -4,6 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
 &led_strip {
-    chain-length = <31>; // Adjust to the actual number of LEDs on the LEFT half
+    chain-length = <31>; // Underglow + Per-Key LEDs on the LEFT half
 };
