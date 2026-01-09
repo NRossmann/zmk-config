@@ -25,9 +25,9 @@
             // | SHIFT |  Y  |  X  |  C   |  V   |  B   | LAYER 3 | LAYER 2 |  | LAYER 2 | LAYER 3 |  N   |  M    |  ,    |  .   |   -   | SHIFT|
             //                     | CTRL | GUI  | ALT  |  SPACE  | LAYER 1 |  | LAYER 1 |  ENTER  | BSPC |  DEL  | CTRL |
             bindings = <
-            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                        &kp Z    &kp U  &kp I     &kp O   &kp P     &kp LBKT
-            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                        &kp H    &kp J  &kp K     &kp L   &kp SEMI  &kp SQT
-            &kp LSHFT &kp Y &kp X &kp C &kp V &kp B     &mo 3     &mo 2              &mo 2     &mo 3        &kp N    &kp M  &kp COMMA &kp DOT &kp MINUS &kp RSHFT
+            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                    &kp Z    &kp U  &kp I     &kp O   &kp P     &kp LBKT
+            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                    &kp H    &kp J  &kp K     &kp L   &kp SEMI  &kp SQT
+            &kp LSHFT &kp Y &kp X &kp C &kp V &kp B &mo 3 &mo 2                      &mo 2 &mo 3      &kp N    &kp M  &kp COMMA &kp DOT &kp MINUS &kp RSHFT
                                   &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1        &mo 1 &kp RET &kp BSPC &kp DEL &kp RCTRL
             >;
         };
@@ -39,9 +39,9 @@
             // |       |  %  |  ^  |  [   |  ]   |  &   |         |         |  |         |         |  0   |  1    |  2    |  3   |   .   |      |
             //                     |      |      |      |         |         |  |         |         |      |       |       |
             bindings = <
-            &kp GRAVE &kp EXCL  &kp AT   &kp LBRC &kp RBRC &kp PIPE                                  &kp FSLH  &kp N7 &kp N8 &kp N9 &kp PLUS  &kp STAR
-            &kp TILDE &kp HASH  &kp DLLR &kp LPAR &kp RPAR &kp GRAVE                                 &kp EQUAL &kp N4 &kp N5 &kp N6 &kp MINUS &kp UNDER
-            &trans    &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp AMPS &trans &trans   &trans &trans   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+            &kp GRAVE &kp EXCL  &kp AT   &kp LBRC &kp RBRC &kp PIPE                                &kp FSLH  &kp N7 &kp N8 &kp N9 &kp PLUS  &kp STAR
+            &kp TILDE &kp HASH  &kp DLLR &kp LPAR &kp RPAR &kp GRAVE                               &kp EQUAL &kp N4 &kp N5 &kp N6 &kp MINUS &kp UNDER
+            &trans    &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp AMPS &trans &trans &trans &trans   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                                          &trans &trans &trans &trans &trans          &trans &trans   &trans &trans &trans
             >;
         };
@@ -53,10 +53,10 @@
             // |       | Cut |Copy |Paste | Undo | Redo |         |         |  |         |         | C+A  | C+S   | C+F   | C+D  |       |      |
             //                     |      |      |      |         |         |  |         |         |      |       |       |
             bindings = <
-            &kp F1    &kp F2      &kp F3       &kp F4       &kp F5       &kp F6                                   &kp HOME      &kp PG_DN   &kp PG_UP     &kp END        &trans &trans
-            &kp F7    &kp F8      &kp F9       &kp F10      &kp F11      &kp F12                                  &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT      &trans &trans
-            &trans    &kp LC(X)   &kp LC(C)    &kp LC(V)    &kp LC(Z)    &kp LC(LS(Z)) &trans &trans &trans &trans &kp LC(A)  &kp LC(S)   &kp LC(F)     &kp LC(D)      &trans &trans
-                                               &trans       &trans       &trans        &trans &trans &trans &trans &trans     &trans      &trans
+            &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6                                  &kp HOME &kp PG_DN &kp PG_UP &kp END  &trans &trans
+            &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                                 &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
+            &trans    &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Z) &kp LC(LS(Z)) &trans &trans &trans &trans &kp LC(A) &kp LC(S) &kp LC(F) &kp LC(D) &trans &trans
+                                         &trans &trans &trans &trans &trans          &trans &trans   &trans &trans &trans
             >;
         };
 
@@ -67,10 +67,10 @@
             // |RGB HUD|RGB SAD|RGB SPD|       |       |      |         |         |  |         |         |RGB HUD|RGB SAD|RGB SPD|       |       |      |
             //                     |      |      |      |         |         |  |         |         |       |       |       |
             bindings = <
-            &kp A &kp B &kp C &kp D &trans &trans                                   &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &trans &trans
-            &kp E &kp F &kp G &trans            &trans &trans                                   &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_SPI   &trans            &trans &trans
-            &kp H &kp I &kp J &trans            &trans &trans &trans &trans        &trans &trans &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_SPD   &trans            &trans &trans
-                                                     &trans       &trans       &trans       &trans &trans        &trans &trans   &trans          &trans          &trans
+            &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD  &rgb_ug RGB_TOG &trans                                  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans
+            &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans                                  &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans
+            &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans &trans &trans &trans &trans    &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans
+                                                     &trans &trans &trans &trans &trans &trans &trans   &trans          &trans          &trans
             >;
         };
     };
