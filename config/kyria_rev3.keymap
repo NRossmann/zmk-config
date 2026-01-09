@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 &led_strip {
     chain-length = <31>; // Per-key and underglow LEDs
@@ -61,14 +62,14 @@
 
         rgb_bt_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // | BT CLR| BT0 | BT1 | BT2  | BT3  | BT4  |                                          |RGB TOG|RGB EFF|RGB BRI|RGB BRD|       |      |
-            // |       |     |     |      |      |      |                                          |RGB HUI|RGB SAI|RGB SPI|       |       |      |
-            // |       |     |     |      |      |      |         |         |  |         |         |RGB HUD|RGB SAD|RGB SPD|       |       |      |
+            // |RGB TOG|RGB EFF|RGB BRI|RGB BRD|       |      |                                          |RGB TOG|RGB EFF|RGB BRI|RGB BRD|       |      |
+            // |RGB HUI|RGB SAI|RGB SPI|       |       |      |                                          |RGB HUI|RGB SAI|RGB SPI|       |       |      |
+            // |RGB HUD|RGB SAD|RGB SPD|       |       |      |         |         |  |         |         |RGB HUD|RGB SAD|RGB SPD|       |       |      |
             //                     |      |      |      |         |         |  |         |         |       |       |       |
             bindings = <
-            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                      &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans
-            &trans     &trans       &trans       &trans       &trans       &trans                                            &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans
-            &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans        &trans &trans   &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans
+            &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans                                   &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans
+            &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans                                   &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans
+            &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans &trans &trans        &trans &trans &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans
                                                  &trans       &trans       &trans       &trans &trans        &trans &trans   &trans          &trans          &trans
             >;
         };
