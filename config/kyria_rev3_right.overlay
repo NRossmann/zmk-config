@@ -1,4 +1,0 @@
-/* Disable external power control so P0.06 is free (LEDs use it) */
-&ext_power {
-    status = "disabled";
-};
