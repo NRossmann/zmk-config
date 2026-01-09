@@ -67,10 +67,10 @@
             // |RGB HUD|RGB SAD|RGB SPD|       |       |      |         |         |  |         |         |RGB HUD|RGB SAD|RGB SPD|       |       |      |
             //                     |      |      |      |         |         |  |         |         |       |       |       |
             bindings = <
-            &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans                                   &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans
-            &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans                                   &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &trans          &trans &trans
-            &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans &trans &trans        &trans &trans &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &trans          &trans &trans
-                                                 &trans       &trans       &trans       &trans &trans        &trans &trans   &trans          &trans          &trans
+            &kp A &kp B &kp C &kp D &trans &trans                                   &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &trans &trans
+            &kp E &kp F &kp G &trans            &trans &trans                                   &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_SPI   &trans            &trans &trans
+            &kp H &kp I &kp J &trans            &trans &trans &trans &trans        &trans &trans &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_SPD   &trans            &trans &trans
+                                                     &trans       &trans       &trans       &trans &trans        &trans &trans   &trans          &trans          &trans
             >;
         };
     };
