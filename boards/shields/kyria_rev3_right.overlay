@@ -1,0 +1,9 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+&led_strip {
+    chain-length = <31>; // Adjust to the actual number of LEDs on the RIGHT half
+};
