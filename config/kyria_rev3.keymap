@@ -55,7 +55,6 @@
     chain-length = <31>; // Total LEDs: per-key + underglow
 };
 
-// Macros for characters not directly available
 / {
     macros {
         // Macro to type minus/hyphen on German keyboard
@@ -67,7 +66,6 @@
         };
     };
 
-/ {
     keymap {
         compatible = "zmk,keymap";
 
