@@ -44,15 +44,28 @@
 #define DE_M    M           // M stays M
 #define DE_COMM COMMA       // , stays ,
 #define DE_DOT  DOT         // . stays .
-#define DE_MINS MINUS       // - stays -
+#define DE_MINS MINUS       // - (hyphen) - replaced with macro
 #define DE_PLUS PLUS        // + for +=
 #define DE_CIRC CARET       // ^ (circumflex)
 #define DE_ACUT SQT         // ´ (acute)
+#define DE_SS   MINUS       // ß (sharp s)
 
 // LED strip configuration
 &led_strip {
     chain-length = <31>; // Total LEDs: per-key + underglow
 };
+
+// Macros for characters not directly available
+/ {
+    macros {
+        // Macro to type minus/hyphen on German keyboard
+        minus_char: minus_char {
+            compatible = "zmk,behavior-macro";
+            label = "MINUS_CHAR";
+            #binding-cells = <0>;
+            bindings = <&kp LS(FSLH)>;  // Shift+/ produces -
+        };
+    };
 
 / {
     keymap {
@@ -69,7 +82,7 @@
             bindings = <
             &kp ESC   &kp DE_Q  &kp DE_W  &kp DE_E  &kp DE_R  &kp DE_T                                              &kp DE_Z   &kp DE_U  &kp DE_I    &kp DE_O   &kp DE_P     &kp DE_UE
             &kp TAB   &kp DE_A  &kp DE_S  &kp DE_D  &kp DE_F  &kp DE_G                                              &kp DE_H   &kp DE_J  &kp DE_K    &kp DE_L   &kp DE_OE    &kp DE_AE
-            &kp LSHFT &kp DE_Y  &kp DE_X  &kp DE_C  &kp DE_V  &kp DE_B  &mo 3 &mo 2                 &mo 2 &mo 3     &kp DE_N   &kp DE_M  &kp DE_COMM &kp DE_DOT &kp DE_MINS  &kp RSHFT
+            &kp LSHFT &kp DE_Y  &kp DE_X  &kp DE_C  &kp DE_V  &kp DE_B  &mo 3 &mo 2                 &mo 2 &mo 3     &kp DE_N   &kp DE_M  &kp DE_COMM &kp DE_DOT &minus_char  &kp RSHFT
                                           &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1         &mo 1 &kp RET &kp BSPC &kp DEL &kp RCTRL
             >;
         };
