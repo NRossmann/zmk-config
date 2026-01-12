@@ -11,6 +11,44 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+// German (QWERTZ) Layout Key Definitions
+// Maps physical keys to correct HID keycodes for German keyboard layout
+#define DE_Q    Q           // Q stays Q
+#define DE_W    W           // W stays W
+#define DE_E    E           // E stays E
+#define DE_R    R           // R stays R
+#define DE_T    T           // T stays T
+#define DE_Z    Y           // Z is on Y position (QWERTZ swap)
+#define DE_U    U           // U stays U
+#define DE_I    I           // I stays I
+#define DE_O    O           // O stays O
+#define DE_P    P           // P stays P
+#define DE_UE   LBKT        // Ü key position (where [ is)
+#define DE_A    A           // A stays A
+#define DE_S    S           // S stays S
+#define DE_D    D           // D stays D
+#define DE_F    F           // F stays F
+#define DE_G    G           // G stays G
+#define DE_H    H           // H stays H
+#define DE_J    J           // J stays J
+#define DE_K    K           // K stays K
+#define DE_L    L           // L stays L
+#define DE_OE   SEMI        // Ö key position (where ; is)
+#define DE_AE   SQT         // Ä key position (where ' is)
+#define DE_Y    Z           // Y is on Z position (QWERTZ swap)
+#define DE_X    X           // X stays X
+#define DE_C    C           // C stays C
+#define DE_V    V           // V stays V
+#define DE_B    B           // B stays B
+#define DE_N    N           // N stays N
+#define DE_M    M           // M stays M
+#define DE_COMM COMMA       // , stays ,
+#define DE_DOT  DOT         // . stays .
+#define DE_MINS MINUS       // - stays -
+#define DE_PLUS PLUS        // + for +=
+#define DE_CIRC CARET       // ^ (circumflex)
+#define DE_ACUT SQT         // ´ (acute)
+
 // LED strip configuration
 &led_strip {
     chain-length = <31>; // Total LEDs: per-key + underglow
@@ -21,31 +59,33 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // Primary QWERTY layer - German layout (QUERTZ)
+            // Primary QWERTY layer - German layout (QWERTZ)
+            // Correctly mapped for German keyboard layout
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Z   |  U    |  I    |  O   |   P   |  Ü   |
             // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   Ö   |  Ä   |
             // | SHIFT |  Y  |  X  |  C   |  V   |  B   | LAYER 3 | LAYER 2 |  | LAYER 2 | LAYER 3 |  N   |  M    |  ,    |  .   |   -   | SHIFT|
             //                     | CTRL | GUI  | ALT  |  SPACE  | LAYER 1 |  | LAYER 1 |  ENTER  | BSPC |  DEL  | CTRL |
             bindings = <
-            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                    &kp Z    &kp U  &kp I     &kp O   &kp P     &kp LBKT
-            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                    &kp H    &kp J  &kp K     &kp L   &kp SEMI  &kp SQT
-            &kp LSHFT &kp Y &kp X &kp C &kp V &kp B &mo 3 &mo 2                      &mo 2 &mo 3      &kp N    &kp M  &kp COMMA &kp DOT &kp MINUS &kp RSHFT
-                                  &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1        &mo 1 &kp RET &kp BSPC &kp DEL &kp RCTRL
+            &kp ESC   &kp DE_Q  &kp DE_W  &kp DE_E  &kp DE_R  &kp DE_T                                              &kp DE_Z   &kp DE_U  &kp DE_I    &kp DE_O   &kp DE_P     &kp DE_UE
+            &kp TAB   &kp DE_A  &kp DE_S  &kp DE_D  &kp DE_F  &kp DE_G                                              &kp DE_H   &kp DE_J  &kp DE_K    &kp DE_L   &kp DE_OE    &kp DE_AE
+            &kp LSHFT &kp DE_Y  &kp DE_X  &kp DE_C  &kp DE_V  &kp DE_B  &mo 3 &mo 2                 &mo 2 &mo 3     &kp DE_N   &kp DE_M  &kp DE_COMM &kp DE_DOT &kp DE_MINS  &kp RSHFT
+                                          &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1         &mo 1 &kp RET &kp BSPC &kp DEL &kp RCTRL
             >;
         };
 
         symbol_layer {
             // Symbols and numbers - accessed via MO(1) modifier
+            // German layout symbol positions
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |   `   |  !  |  @  |  {   |  }   |  |   |                                          |  /   |  7    |  8    |  9   |   +   |  *   |
-            // |   ~   |  #  |  $  |  (   |  )   |  `   |                                          |  =   |  4    |  5    |  6   |   -   |  _   |
-            // |       |  %  |  ^  |  [   |  ]   |  &   |         |         |  |         |         |  0   |  1    |  2    |  3   |   .   |      |
+            // |   °   |  !  |  "  |  {   |  }   |  |   |                                          |  /   |  7    |  8    |  9   |   +   |  *   |
+            // |   ^   |  §  |  $  |  (   |  )   |  `   |                                          |  =   |  4    |  5    |  6   |   -   |  _   |
+            // |       |  %  |  &  |  [   |  ]   |  ~   |         |         |  |         |         |  0   |  1    |  2    |  3   |   .   |      |
             //                     |      |      |      |         |         |  |         |         |      |       |       |
             bindings = <
             &kp GRAVE &kp EXCL  &kp AT   &kp LBRC &kp RBRC &kp PIPE                                &kp FSLH  &kp N7 &kp N8 &kp N9 &kp PLUS  &kp STAR
             &kp TILDE &kp HASH  &kp DLLR &kp LPAR &kp RPAR &kp GRAVE                               &kp EQUAL &kp N4 &kp N5 &kp N6 &kp MINUS &kp UNDER
-            &trans    &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp AMPS &trans &trans &trans &trans   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+            &trans    &kp PRCNT &kp AMPS &kp LBKT &kp RBKT &kp CARET &trans &trans &trans &trans   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                                          &trans &trans &trans &trans &trans          &trans &trans   &trans &trans &trans
             >;
         };
