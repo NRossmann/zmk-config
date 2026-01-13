@@ -93,7 +93,7 @@
             //                     | CTRL | GUI  | ALT  |  SPACE  | LAYER 1 |  | LAYER 2 |  ENTER  | BSPC |  DEL  | CTRL |
             bindings = <
             &kp TAB   &kp Q         &kp W         &kp E         &kp R         &kp T                                       &kp DE_Z  &kp U         &kp I         &kp O         &kp P             &kp DE_UE
-            &kp ESC   &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D &hm_l LSHFT F &kp G                                       &kp H     &hm_r RSHFT J &hm_r RCTRL K &hm_r RALT L  &hm_r RGUI DE_OE  &kp DE_AE
+            &kp ESC   &hm_l RALT A  &hm_l LALT S  &hm_l LCTRL D &hm_l LSHFT F &kp G                                       &kp H     &hm_r RSHFT J &hm_r RCTRL K &hm_r LALT L  &hm_r RALT DE_OE  &kp DE_AE
             &kp DE_SS &kp DE_Y      &kp X         &kp C         &kp V         &kp B     &mo 3      &mo 2    &mo 2 &mo 3   &kp N     &kp M         &kp COMMA     &kp DOT       &kp DE_MINS       &kp DE_HASH
                                                   &kp LCTRL     &kp LGUI      &kp LALT  &kp SPACE  &mo 1    &mo 2 &kp RET &kp BSPC  &kp DEL       &kp RCTRL
             >;
@@ -104,14 +104,14 @@
             // Deutsche Sonderzeichen optimiert
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |   ~   |  !  |  @  |  {   |  }   |  |   |                                          |  *   |  7    |  8    |  9   |   /   |      |
-            // |   `   |  #  |  $  |  (   |  )   |  =   |                                          |  +   |  4    |  5    |  6   |   <   |  >   |
+            // |   '   |  #  |  $  |  (   |  )   |  =   |                                          |  +   |  4    |  5    |  6   |   <   |  >   |
             // |   "   |  %  |  &  |  [   |  ]   |      |         |         |  |         |         |  0   |  1    |  2    |  3   |   ^   |   °  |
-            //                     |      |      |      |         |         |  |         |         |      |       |       |
+            //                     |      |      |      |         |         |  | Layer 3 |         |      |       |       |
             bindings = <
             &kp RA(LBRC)  &kp LS(N1)  &kp RA(Q)   &kp RA(N7)  &kp RA(N0)  &kp RA(NUBS)                                  &kp LS(RBRC)  &kp N7  &kp N8  &kp N9  &kp LS(N7)  &none
             &kp LS(BSLH)  &kp BSLH    &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)                                    &kp RBRC      &kp N4  &kp N5  &kp N6  &kp NUBS    &kp LS(NUBS)
             &kp LS(N2)    &kp LS(N5)  &kp LS(N6)  &kp RA(N8)  &kp RA(N9)  &none         &trans  &trans   &trans &trans  &kp N0        &kp N1  &kp N2  &kp N3  &kp TILDE   &kp LS(TILDE)
-                                      &trans      &trans      &trans      &trans        &trans  &trans   &trans &trans  &trans        &trans
+                                      &trans      &trans      &trans      &trans        &trans  &mo 3   &trans &trans  &trans        &trans
             >;
         };
 
@@ -121,13 +121,13 @@
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  F1   | F2  | F3  |  F4  |  F5  |  F6  |                                          | HOME | PG_DN | PG_UP | END  |       |      |
             // |  F7   | F8  | F9  | F10  | F11  | F12  |                                          | LEFT | DOWN  |  UP   | RIGHT|       |      |
-            // |       |     | Cut |Copy |Paste | Undo |         |         |  |         |         | C+A  | C+S   | C+F   | C+D  |  <    |  >   |
+            // |       |     | Cut |Copy |Paste | Undo |         |         |  |         |         | C+A  | C+S   | C+F   | C+D  |      |     |
             //                     |      |      |      |         |         |  |         |         |      |       |       |
             bindings = <
             &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6                                      &kp HOME  &kp PG_DN &kp PG_UP &kp END   &none     &none
             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                                     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &none
-            &none    &none &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Z) &trans &trans &trans &trans   &kp LC(A) &kp LC(S) &kp LC(F) &kp LC(D) &kp NUBS   &kp LS(NUBS)
-                                          &trans    &trans    &trans        &trans &trans &trans &trans   &trans    &trans    &trans
+            &none    &none &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Z) &trans &trans &trans &trans   &kp LC(A) &kp LC(S) &kp LC(F) &kp LC(D) &none   &none
+                                          &trans    &trans    &trans        &trans &mo 3 &trans &trans   &trans    &trans    &trans
             >;
         };
 
