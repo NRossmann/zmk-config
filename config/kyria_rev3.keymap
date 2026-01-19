@@ -96,7 +96,7 @@
                                                   &kp LCTRL     &kp LGUI      &kp LALT  &kp SPACE  &mo 1    &mo 2 &kp RET &kp BSPC  &kp DEL       &kp RCTRL
             >;
         };
-
+//TODO: Add Tapdance on left side for Copy Paste
         symbol_layer {
             // Symbols and numbers - Numpad-Layout rechts, Symbole links
             // Deutsche Sonderzeichen optimiert
